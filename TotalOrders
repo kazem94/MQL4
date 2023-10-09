@@ -1,0 +1,22 @@
+int TotalOrdersCount()
+  {
+   int found = 0;
+   for(int i=0; i<OrdersTotal(); i++)
+     {
+      if(OrderSelect(i, SELECT_BY_POS, MODE_TRADES))
+        {
+         if(OrderSymbol() == Symbol())
+           {
+            found = 1;
+           }
+        }
+     }
+   if(found == 1)
+     {
+      return(1);
+     }
+   else
+     {
+      return(0);
+     }
+  }
