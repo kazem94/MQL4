@@ -1,0 +1,10 @@
+double CalculateLotSize(double SL)
+  {
+   double LotSize = 0;
+   LotSize = ((AccountBalance() * Risk / 100) / (SL));
+   if(LotSize == 0 || LotSize < 0.01)
+     {
+      LotSize = 0.01;
+     }
+   return LotSize;
+  }
